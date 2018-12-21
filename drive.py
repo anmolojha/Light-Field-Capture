@@ -80,7 +80,7 @@ calibration(para)
 
 #for index in range(10):  # 10 is the number of slices
 #	section = stack.createImage(image,index) # Creates an section according to some rule (can be changed in stack.py)
-#	cv2.imwrite("Stack/image"+str(index)+".png",section)
+#	cv2.imwrite("Stackimage"+str(index)+".png",section)
 
 
 ## End 
@@ -202,7 +202,7 @@ def propagateToSensorAngle(image,image_distance): # Same as above expect everyth
 
 # Driving loop
 for index in range(3,4): # 2,3 arbitrary. Can range between the number of slices
-	section = cv2.imread("Stack/image"+str(index)+".png",0) 
+	section = cv2.imread("Stackimage"+str(index)+".png",0) 
 	distance = para['specimen_distance'] +(index-2)*para['z_spacing'] # 2 here determines that slice in image2 is in focus
 	image_distance,mag = lens.distanceMagnification(distance)
 	print(image_distance,mag)
